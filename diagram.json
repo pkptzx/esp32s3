@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "author": "码魂",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-esp32-s3-devkitc-1",
+        "id": "esp",
+        "top": 0,
+        "left": 0,
+        "attrs":  { "psramSize": "16", "flashSize": "16" }
+      },
+      { "type": "wokwi-neopixel", "id": "rgb1", "top": 54.1, "left": -97, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "rgb1:VDD", "esp:3V3.1", "green", [ "h0", "v-28.8" ] ],
+      [ "rgb1:VSS", "esp:GND.1", "green", [ "v162.3", "h-0.8" ] ],
+      [ "rgb1:DIN", "esp:4", "green", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }
