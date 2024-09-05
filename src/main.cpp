@@ -41,6 +41,8 @@ void setup() {
   Serial.println("Flash 速度: " + String(ESP.getFlashChipSpeed()/1000000) + " MHz");
   Serial.println("Flash 模式: " + String(ESP.getFlashChipMode()));
   Serial.println("PSRAM 容量: " + String(ESP.getPsramSize()/1024/1024) + " MB");
+  Serial.printf("Deafult free size: %d\n", heap_caps_get_free_size(MALLOC_CAP_DEFAULT));
+  Serial.printf("PSRAM free size: %d\n", heap_caps_get_free_size(MALLOC_CAP_SPIRAM));
 
    myLED.begin( LED_GPIO, 1 );         // initialze the myLED object. Here we have 1 LED attached to the LED_GPIO pin
     myLED.brightness( LED_BRIGHT );     // set the LED photon intensity level
